@@ -1,0 +1,11 @@
+.wrap {
+	--width: 600px;
+
+	margin: 0 auto;
+	text-align: center;
+	width: var(--width);
+}
+
+.play-btn {
+	margin: 10px;
+}
