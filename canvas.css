@@ -10,10 +10,15 @@
 	margin: 10px;
 }
 
-.title {
+.title, .header {
 	color: #f0f0f0;
+	text-align: left;
 }
 
 body {
 	background: #262626;
+}
+
+.header div {
+	display: inline-block;
 }

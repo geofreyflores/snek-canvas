@@ -32,7 +32,7 @@
 		},
 
 		game: {
-			score: 0, 
+			score: 0, highscore: 0,
 			speed: 100, 
 			size: 10,
 			direction: dir.up,
@@ -249,6 +249,9 @@
 		let snake = new Snake(config.snake, ctx)
 		let food = new Food(config.food, ctx)
 
+		document.getElementById("highscore").innerHTML = config.game.highscore
+		document.getElementById("score").innerHTML = game.score
+
 		// init draw
 		drawContainer(ctx)
 		snake.draw()
@@ -268,6 +271,8 @@
 			if (collision = snake.equals(food.pos)) {
 				food.next() // generate next food
 				game.score++
+				if (game.score > config.game.highscore) config.game.highscore = game.score
+				document.getElementById("score").innerHTML = game.score
 				if (game.score % 5 === 0) game.speed -= 10
 			}
 			stopDraw = setTimeout(moveSnake, game.speed)
